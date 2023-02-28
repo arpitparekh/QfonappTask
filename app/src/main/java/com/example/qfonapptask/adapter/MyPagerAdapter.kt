@@ -1,0 +1,25 @@
+package com.example.qfonapptask.adapter
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.qfonapptask.fragment.ContentFragment
+import com.example.qfonapptask.fragment.SecondFragment
+
+class MyPagerAdapter(fragmentManager: FragmentManager,lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager,lifecycle) {
+
+    override fun getItemCount() = 2
+
+    override fun createFragment(position: Int): Fragment {
+
+        if(position==0){
+            return ContentFragment()
+        }else if(position==1){
+            return SecondFragment()
+        }else{
+            return ContentFragment()
+        }
+
+    }
+}
